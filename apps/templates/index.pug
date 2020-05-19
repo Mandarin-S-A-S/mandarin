@@ -1,0 +1,13 @@
+extends generic_auth
+
+- load static
+
+block content_generic_auth
+    |{% verbatim %}
+    div(id="app")
+        |{{message}}
+        button(v-on:click="reverseMessage") Reverse Message
+    |{% endverbatim %}
+
+block generic_auth_script
+    script(src="{% static 'assets/js/templates/dist/index.js'%}")

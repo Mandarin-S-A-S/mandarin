@@ -1,0 +1,27 @@
+extends ../../generic_auth
+
+- load static
+- load crispy_forms_tags
+
+block content_generic_auth
+    div(class="panel panel-primary")
+        div(class="panel-heading")
+            h4(class="panel-title") {{ title_panel }}
+            div(class="panel-heading-btn")
+                a(href="javascript:;",class="btn btn-xs btn-icon btn-circle btn-default",data-click="panel-expand")
+                    i(class="fa fa-expand")
+                a(href="javascript:;",class="btn btn-xs btn-icon btn-circle btn-success",data-click="panel-reload",id="reload")
+                    i(class="fa fa-redo")
+                a(href="javascript:;",class="btn btn-xs btn-icon btn-circle btn-warning",data-click="panel-collapse")
+                    i(class="fa fa-minus")
+        div(class="panel-body")
+            |{% crispy form %}
+
+
+block generic_auth_script
+    script.
+        $(document).ready(function () {
+            $('#id_permissions').select2({
+                closeOnSelect: false
+            });
+        });

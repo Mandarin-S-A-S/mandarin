@@ -1,0 +1,38 @@
+extends base.pug
+
+- load static
+- load crispy_forms_tags
+
+block title
+    |Iniciar sesión
+
+
+
+block body_content
+    body(class="pace-top")
+        div(id="page-loader",class="fade show")
+            span(class="spinner")
+
+        div(id="page-container",class="fade")
+            div(class="login login-v1")
+                div(class="login-container")
+                    div(class="login-header")
+                        div(class="brand")
+                            span(class="logo")
+                                span(class="text-blue") G
+                                span(class="text-red") o
+                                span(class="text-orange") o
+                                span(class="text-blue") g
+                                span(class="text-green") l
+                                span(class="text-red") e
+                            b Color
+                            | Admin
+                            small responsive bootstrap 4 admin template
+                        div(class="icon")
+                            i(class="fa fa-lock")
+                    div(class="login-body")
+                        div(class="login-content")
+                            form(class="margin-bottom-0",method="POST")
+                                | {% crispy form %}
+
+block body_script
